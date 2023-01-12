@@ -183,7 +183,7 @@
 
     window.location.href = "../detalle_lib.html?option=libro&codigo=lib_" + sku ;
 
-    console.log(window.location.href);
+    // console.log(window.location.href);
 
     // window.location.href = "../detalle_lib.html?option=libro&codigo=lib_001"; // Probando con código fijo
 
