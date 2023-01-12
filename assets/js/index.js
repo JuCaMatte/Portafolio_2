@@ -117,7 +117,8 @@
     // alert("pantalla de resumen de libro " + sku);
     // window.location.href = "../detalle_lib.html"; funciona para cargar detalle_lib.html
 
-    window.location.href = "../detalle_lib.html?option=libro&codigo=lib_" + sku ;
+    //Linea de prueba 12_01_2023 **************************************
+    window.location.href = "./detalle_lib.html?option=libro&codigo=lib_" + sku ;
 
 
     // window.location.href = "../detalle_lib.html?option=libro&codigo=lib_001"; // Probando con código fijo
