@@ -48,26 +48,24 @@
 
     let acumulador = ""; 
 
+    /*
+
     let libMisterio = productos.filter(libro=>libro.descripcion=="Misterio");
-
-    // document.write("<h2>LIBROS DE MISTERIO</h2>");
-    // document.write("LIBROS DE MISTERIO");
-
-    cargarProductosMisterio(libMisterio);
-
+    
     let libSupera = productos.filter(libro=>libro.descripcion=="Superación personal");
+    
+   */
+    cargarProductos(productos);
+    
 
-    // document.write("<h2>LIBROS DE SUPERACIÓN PERSONAL</h2>");
-/*     document.write("LIBROS DE SUPERACIÓN PERSONAL"); */
 
-    cargarProductosSupera(libSupera); 
-
-  function cargarProductosSupera(listadoProductos) {
+  function cargarProductos(listadoProductos) {
   
       // let acumulador = ""; // PROBANDO
 
-       listadoProductos.forEach((producto) => {   
-
+       listadoProductos.forEach((producto) => {  
+        
+      
           let template = `
 
                   <div class="col-12 col-md-6 col-lg-4">
@@ -103,76 +101,14 @@
                       </div>
                   </div>
               `;
-          acumulador += template;
-          });
-    
-          
-          document.querySelector("#productos .row").innerHTML = acumulador;
-
-       
+              
+          if (producto.descripcion=="Misterio") {document.querySelector(".misterio").innerHTML += template}
+          else{document.querySelector(".superacion").innerHTML += template}
+          });     
   }
 
 
-  // cargarProductosSupera(libSupera); 
-
-  function cargarProductosMisterio(listadoProductos) {
   
-      // let acumulador = ""; // PROBANDO
-
-       listadoProductos.forEach((producto) => {   
-
-
-
-
-          let template = `
-
-                  <div class="col-12 col-md-6 col-lg-4">
-                      
-                      <div class="card m-auto my-3" style="width: 18rem;">
-                          <img src="${producto.imagen}" class="card-img-top" alt="${
-            producto.nombre
-          }">
-                          <div class="card-body">
-                          <h5 class="card-title">${producto.nombre}</h5>
-                          <p class="card-text">${producto.descripcion}</p>
-                          <p class="card-text">Precio Normal: $ ${producto.precio}</p>
-                          <p class="card-text text-danger">Descuento: -  $ ${
-                            producto.descuento
-                          }</p>
-
-                          <p class="card-text text-success">Precio final: $ ${
-                            producto.precio - producto.descuento
-                          }</p>
-
-                          <a class="btn btn-primary" data-sku="${
-                            producto.sku
-                          }" onclick="addToCart('${producto.sku}')">Comprar</a>
-
-
-                          <a class="btn btn-primary" data-sku="${
-                            producto.sku
-                          }" onclick="resLibro('${producto.sku}')">Resumen Libro</a>
-
-
-
-                          </div>
-                      </div>
-                  </div>
-              `;
-          acumulador += template;
-          });
-    
-          
-          document.querySelector("#productos .row").innerHTML = acumulador;
-
-       
-  }
-
-
-
-
-
-
 
 
 // Preparando pantalla de detalle de libro 
@@ -183,7 +119,6 @@
 
     window.location.href = "../detalle_lib.html?option=libro&codigo=lib_" + sku ;
 
-    // console.log(window.location.href);
 
     // window.location.href = "../detalle_lib.html?option=libro&codigo=lib_001"; // Probando con código fijo
 
