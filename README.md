@@ -17,8 +17,6 @@ nombre: "Carlos", password: "123456
 ### Deployment
 Se pone a disposición de los usuarios una Github page, para que prueben el funcionamiento de la página.
 En la página estarán a disposición: [Portafolio-2]<https://jucamatte.github.io/Portafolio-2/>
-## REQUERIMIENTOS
-
 
 ## TECNOLOGÍAS UTILIZADAS
 
